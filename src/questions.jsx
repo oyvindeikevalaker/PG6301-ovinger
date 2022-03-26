@@ -1,5 +1,5 @@
 export function randomQuestion() {
-    return Questions[Math.trunc(Math.random() * Questions.length)];
+    return Questions[Math.trunc(Math.random() *Questions.length)];
 }
 
 export function isCorrectAnswer(question, answer) {
