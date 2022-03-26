@@ -1,16 +1,19 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import {useState} from "react";
-import { randomQuestion } from "./questions";
+import { randomQuestion, isCorrectAnswer } from "./questions";
+
 
 
 function Quiz() {
     const [question, setQuestion] = useState(randomQuestion());
     const [answer, setAnswer] = useState();
 
+
+
     if (answer) {
         return <>
-            <h1>{question.correct_answers[answer + "_correct"] === "true" ? "Right" : "Wrong"}</h1>
+            <h1>{isCorrectAnswer()} ? "Right" : "Wrong"}</h1>
         </>;
     }
 
