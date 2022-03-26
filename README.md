@@ -1,4 +1,4 @@
-# PG6301-ovinger
+# PG6301-Øvinger
 Øvinger til PG6301
 
 ## Instruksjoner
@@ -12,4 +12,14 @@ _Dere kan bruke funksjonene randomQuestion og isCorrectAnswer fra questions.js  
 4. Når brukeren har svart kan de trykke en knapp for å få et nytt spørsmål (endre useState for answer til undefined og question til et nytt tilfeldig spørsmål)
 
 _Fasit: https://github.com/kristiania-pg6301-2022/pg6301-react-and-express-lectures/commits/exercise/answer/01_
+
+
+[X] Oppgave 1
+
+[ ] Oppgave 2
+
+[ ] Oppgave 3
+
+[ ] Oppgave 4
+
 
