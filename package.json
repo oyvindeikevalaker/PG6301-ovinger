@@ -1,0 +1,23 @@
+{
+  "name": "g6301-ovinger",
+  "version": "1.0.0",
+  "description": "Øvinger til PG6301",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oyvindeikevalaker/PG6301-ovinger.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oyvindeikevalaker/PG6301-ovinger/issues"
+  },
+  "homepage": "https://github.com/oyvindeikevalaker/PG6301-ovinger#readme",
+  "devDependencies": {
+    "parcel": "^2.4.0"
+  }
+}
