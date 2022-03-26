@@ -13,13 +13,13 @@ _Dere kan bruke funksjonene randomQuestion og isCorrectAnswer fra questions.js  
 
 _Fasit: https://github.com/kristiania-pg6301-2022/pg6301-react-and-express-lectures/commits/exercise/answer/01_
 
+##Besvarelse
+- [X] Oppgave 1
 
-[X] Oppgave 1
+- [X] Oppgave 2
 
-[ ] Oppgave 2
+- [X] Oppgave 3
 
-[ ] Oppgave 3
-
-[ ] Oppgave 4
+- [ ] Oppgave 4
 
 
