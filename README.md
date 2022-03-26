@@ -20,6 +20,6 @@ _Fasit: https://github.com/kristiania-pg6301-2022/pg6301-react-and-express-lectu
 
 - [X] Oppgave 3
 
-- [ ] Oppgave 4
+- [X] Oppgave 4
 
 
