@@ -3,25 +3,7 @@ import * as ReactDOM from "react-dom";
 import {useState} from "react";
 import { randomQuestion, isCorrectAnswer } from "./questions";
 
-
-
-function Quiz() {
-    const [question, setQuestion] = useState(randomQuestion());
-    const [answer, setAnswer] = useState();
-
-    function handleRestart(){
-        setQuestion(randomQuestion());
-        setAnswer(undefined);
-    }
-
-
-    if (answer) {
-        return <ShowAnswerStatus question={question} onAnswer = {setAnswer} onRestart={handleRestart} />;
-    }
-    return <ShowQuestion question={question} onAnswer = {setAnswer}/>;
-}
-
-function ShowQuestion(question, onAnswer) {
+function ShowQuestion({question, onAnswer}) {
     return <>
         <h1>{question.question}</h1>
         {Object.keys(question.answers)
@@ -32,17 +14,29 @@ function ShowQuestion(question, onAnswer) {
     </>;
 }
 
-    function ShowAnswerStatus(question, answer, setQuestion, setAnswer) {
-        return <>
-            <h1>{isCorrectAnswer(question, answer) ? "Right" : "Wrong"}</h1>
-            <p>
-                <button onClick={() => {
-                    setQuestion(randomQuestion());
-                    setAnswer(undefined);
-                }}>Another question
-                </button>
-            </p>
-        </>;
+function ShowAnswerStatus({answer, onRestart, question}) {
+    return <>
+        <h1>{isCorrectAnswer(question, answer) ? "Right" : "Wrong"}</h1>
+        <p>
+            <button onClick={onRestart}>Another question</button>
+        </p>
+    </>;
+}
+
+function Quiz() {
+    const [question, setQuestion] = useState(randomQuestion());
+    const [answer, setAnswer] = useState();
+
+    function handleRestart(){
+        setQuestion(randomQuestion());
+        setAnswer(undefined);
     }
+
+    if (answer) {
+        return <ShowAnswerStatus question={question} answer = {answer} onRestart={handleRestart} />;
+    }
+
+    return <ShowQuestion question={question} onAnswer = {setAnswer}/>;
+}
 
 ReactDOM.render(<Quiz/>, document.getElementById("app"));
