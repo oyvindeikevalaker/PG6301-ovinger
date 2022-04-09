@@ -9,7 +9,7 @@ describe("Quiz game", () => {
             <FrontPage correctAnswers={3} questionsAnswered={10} />,
             element
         );
-        expect(element.querySelector("[data-testid-status]").textContent)
+        expect(element.querySelector("[data-testid=status]").textContent)
             .toEqual("You have answered 3 of 10 correctly")
     })
 })

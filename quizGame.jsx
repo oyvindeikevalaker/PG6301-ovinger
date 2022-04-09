@@ -1,15 +1,12 @@
 import ReactDOM from "react-dom";
 import React, {useState} from "react";
 import {BrowserRouter, Link, Route, Routes, useNavigate} from "react-router-dom";
-import {randomQuestion, isCorrectAnswer} from "./questions";
+import {isCorrectAnswer, randomQuestion} from "./questions";
 
 export function FrontPage({correctAnswers, questionsAnswered}) {
     return <div>
         <h1>Quiz app</h1>
-        <div>You have answered {correctAnswers} of {questionsAnswered} correctly</div>
-        <Link to={"/question"}>
-            <button>Take a new quiz</button>
-        </Link>
+        <div data-testid={"status"}>You have answered {correctAnswers} of {questionsAnswered} correctly</div>
     </div>;
 }
 
@@ -54,7 +51,8 @@ export function QuizGame(){
             <Route path={"/"}
                    element={<FrontPage questionsAnswered={questionsAnswered} correctAnswers={correctAnswers}/>}/>
             <Route path={"/question"}
-                   element={<ShowQuestion setQuestionsAnswered={setQuestionsAnswered} setCorrectAnswers={setCorrectAnswers}/>}/>
+                   element={<ShowQuestion setQuestionsAnswered={setQuestionsAnswered}
+                                          setCorrectAnswers={setCorrectAnswers}/>}/>
             <Route path={"/answer/*"} element={<ShowAnswer/>}/>
         </Routes>
     </BrowserRouter>;
