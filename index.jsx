@@ -3,18 +3,21 @@ import React, {useState} from "react";
 import {BrowserRouter, Link, Route, Routes, useNavigate} from "react-router-dom";
 import {randomQuestion, isCorrectAnswer} from "./questions";
 
-function FrontPage() {
+function FrontPage({correctAnswers, questionsAnswered}) {
     return <div>
         <h1>Quiz app</h1>
+        <div>You have answered {correctAnswers} of {questionsAnswered} correctly</div>
         <Link to={"/question"}>
             <button>Take a new quiz</button>
         </Link>
     </div>;
 }
 
-function ShowQuestion() {
+function ShowQuestion({setCorrectAnswers, setQuestionsAnswered}) {
     function handleAnswer(answer){
+        setQuestionsAnswered(q => q +1);
         if(isCorrectAnswer(question, answer)){
+            setCorrectAnswers(q => q + 1);
             navigate("/answer/correct");
         } else {
             navigate("/answer/wrong");
@@ -27,8 +30,8 @@ function ShowQuestion() {
         {Object.keys(question.answers)
             .filter(a => question.answers[a])
             .map(a => <div key={a}>
-                <button onClick={() => handleAnswer(a)}>{question.answers[a]}</button>)
-            </div>)};
+                <button onClick={() => handleAnswer(a)}>{question.answers[a]}</button>
+            </div>)}
     </div>;
 }
 
@@ -40,14 +43,18 @@ function ShowAnswer() {
         </Routes>
         <div><Link to={"/"}>Show score</Link></div>
         <div><Link to={"/question"}>New question</Link></div>
-    </div>;
+    </div>
 }
 
 function QuizGame(){
+    const [questionsAnswered, setQuestionsAnswered] = useState(0);
+    const [correctAnswers, setCorrectAnswers] = useState(0);
     return <BrowserRouter>
         <Routes>
-            <Route path={"/"} element={<FrontPage/>}/>
-            <Route path={"/question"} element={<ShowQuestion/>}/>
+            <Route path={"/"}
+                   element={<FrontPage questionsAnswered={questionsAnswered} correctAnswers={correctAnswers}/>}/>
+            <Route path={"/question"}
+                   element={<ShowQuestion setQuestionsAnswered={setQuestionsAnswered} setCorrectAnswers={setCorrectAnswers}/>}/>
             <Route path={"/answer/*"} element={<ShowAnswer/>}/>
         </Routes>
     </BrowserRouter>;
