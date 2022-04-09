@@ -9,7 +9,9 @@ exports[`Quiz game Shows answer status 1`] = `
 
 exports[`Quiz game shows question 1`] = `
 "<div>
-  <h1>Quiz app</h1>
-  <div data-testid=\\"status\\">You have answered 0 of 0 correctly</div><a href=\\"/question\\"><button>Take a new quiz</button></a>
+  <h1>Are you happy?</h1>
+  <div><button>Yes</button></div>
+  <div><button>No</button></div>
+  <div><button>Maybe</button></div>
 </div>"
 `;
