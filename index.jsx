@@ -1,17 +1,26 @@
 import ReactDOM from "react-dom";
-import React from "react";
-import {BrowserRouter, Link, Route, Routes} from "react-router-dom"
+import React, {useState} from "react";
+import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
+import {randomQuestion} from "./questions";
 
 function FrontPage() {
     return <div>
         <h1>Quiz app</h1>
-        <Link to={"/question"}><button>Take a new quiz</button></Link>
+        <Link to={"/question"}>
+            <button>Take a new quiz</button>
+        </Link>
     </div>;
 }
 
 function ShowQuestion() {
+    const [question] = useState(randomQuestion());
     return <div>
-        <h1>Here is a question</h1>
+        <h1>{question.question}</h1>
+        {Object.keys(question.answers)
+            .filter(a => question.answers[a])
+            .map(a => <div key={a}>
+                <button>{question.answers[a]}</button>)
+            </div>)};
     </div>;
 }
 
