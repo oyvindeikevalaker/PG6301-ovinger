@@ -5,6 +5,20 @@ import {MemoryRouter} from "react-router-dom";
 import pretty from "pretty";
 import {Simulate} from "react-dom/test-utils";
 
+const question = {
+    question: "Are you happy?",
+    answers: {
+        answer_a: "Yes",
+        answer_b: "No",
+        answer_c: "Maybe",
+    },
+    correct_answers: {
+        answer_a_correct: "true",
+        answer_b_correct: "false",
+        answer_c_correct: "false",
+    }
+};
+
 describe("Quiz game", () => {
     it("Shows answer status", () => {
         const element = document.createElement("div");
@@ -18,14 +32,6 @@ describe("Quiz game", () => {
     });
 
     it("shows question", () => {
-        const question = {
-            question: "Are you happy?",
-            answers: {
-                answer_a: "Yes",
-                answer_b: "No",
-                answer_c: "Maybe",
-            }
-        }
         const element = document.createElement("div");
         ReactDOM.render(
             <MemoryRouter initialEntries={["/question"]}>
@@ -39,20 +45,6 @@ describe("Quiz game", () => {
     });
 
     it("records correct answer", () => {
-        const question = {
-            question: "Are you happy?",
-            answers: {
-                answer_a: "Yes",
-                answer_b: "No",
-                answer_c: "Maybe",
-            },
-            correct_answers: {
-                answer_a_correct: "true",
-                answer_b_correct: "false",
-                answer_c_correct: "false",
-            }
-        }
-
         const setQuestionsAnswered = jest.fn();
         const setCorrectAnswers = jest.fn();
 
