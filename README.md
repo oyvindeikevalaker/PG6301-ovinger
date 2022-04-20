@@ -20,3 +20,7 @@
     1. https://parceljs.org/languages/javascript/#usage-with-other-tools
 
 _Fasit: https://github.com/kristiania-pg6301-2022/pg6301-react-and-express-lectures/commits/exercise/answer/02_
+
+[![Run test](https://github.com/oyvindeikevalaker/PG6301-ovinger/actions/workflows/test.yml/badge.svg)](https://github.com/oyvindeikevalaker/PG6301-ovinger/actions/workflows/test.yml)
+
+[![Coverage Status](https://coveralls.io/repos/github/oyvindeikevalaker/PG6301-ovinger/badge.svg?branch=ovelse/answer/03)](https://coveralls.io/github/oyvindeikevalaker/PG6301-ovinger?branch=ovelse/answer/03)
