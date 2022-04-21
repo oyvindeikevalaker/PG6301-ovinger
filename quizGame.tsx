@@ -1,20 +1,19 @@
-import * as React from "react";
-import { useContext, useState } from "react";
-import {
-  BrowserRouter,
-  Link,
-  Route,
-  Routes,
-  useNavigate,
-} from "react-router-dom";
+import React, { Dispatch, SetStateAction, useContext, useState } from "react";
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import { isCorrectAnswer, randomQuestion } from "./questions";
 
 export const QuestionContext = React.createContext({ randomQuestion });
 
-export function FrontPage({ correctAnswers, questionsAnswered }) {
+export function FrontPage({
+  correctAnswers,
+  questionsAnswered,
+}: {
+  correctAnswers: number;
+  questionsAnswered: number;
+}) {
   return (
     <div>
-      <h1>Quiz app</h1>
+      <h1>Kristiania Quiz</h1>
       <div data-testid={"status"}>
         You have answered {correctAnswers} of {questionsAnswered} correctly
       </div>
@@ -25,8 +24,14 @@ export function FrontPage({ correctAnswers, questionsAnswered }) {
   );
 }
 
-export function ShowQuestion({ setCorrectAnswers, setQuestionsAnswered }) {
-  function handleAnswer(answer) {
+export function ShowQuestion({
+  setCorrectAnswers,
+  setQuestionsAnswered,
+}: {
+  setCorrectAnswers: Dispatch<SetStateAction<number>>;
+  setQuestionsAnswered: Dispatch<SetStateAction<number>>;
+}) {
+  function handleAnswer(answer: any) {
     setQuestionsAnswered((q) => q + 1);
     if (isCorrectAnswer(question, answer)) {
       setCorrectAnswers((q) => q + 1);
