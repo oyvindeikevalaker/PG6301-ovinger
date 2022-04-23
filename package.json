@@ -1,8 +1,8 @@
 {
   "name": "g6301-ovinger",
   "version": "1.0.0",
-  "description": "Hello and welcome to the Quiz broadcast\r =======================================",
-  "main": "index.js",
+  "description": "Hello and welcome to the Quiz broadcast",
+  "main": "quiz.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,9 +18,17 @@
   },
   "homepage": "https://github.com/oyvindeikevalaker/PG6301-ovinger#readme",
   "devDependencies": {
-    "prettier": "^2.6.2"
+    "@babel/preset-env": "^7.16.11",
+    "babel-jest": "^27.5.1",
+    "jest": "^27.5.1",
+    "prettier": "^2.6.2",
+    "husky": "^7.0.4",
+    "nodemon": "^2.0.15",
+    "typescript": "^4.6.3",
+    "coverage": "^0.4.1"
   },
   "dependencies": {
-    "coverage": "^0.4.1"
+
+    "express": "^4.17.3"
   }
 }
