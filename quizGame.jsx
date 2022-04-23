@@ -14,7 +14,7 @@ export function FrontPage({correctAnswers, questionsAnswered}) {
     </div>;
 }
 
-export function ShowQuestion({setCorrectAnswers, setQuestionsAnswered}) {
+function ShowQuestion({setCorrectAnswers, setQuestionsAnswered}) {
     function handleAnswer(answer){
         setQuestionsAnswered(q => q +1);
         if(isCorrectAnswer(question, answer)){
@@ -31,7 +31,7 @@ export function ShowQuestion({setCorrectAnswers, setQuestionsAnswered}) {
         <h1>{question.question}</h1>
         {Object.keys(question.answers)
             .filter(a => question.answers[a])
-            .map(a => <div key={a} data-testid={a}>
+            .map(a => <div key={a}>
                 <button onClick={() => handleAnswer(a)}>{question.answers[a]}</button>
             </div>)}
     </div>;
