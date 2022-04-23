@@ -52,7 +52,12 @@
   "jest": {
     "testEnvironment": "jsdom",
     "collectCoverageFrom": [
-      "*.{jsx,tsx}"
+      "**/*.{jsx,tsx,js,ts}",
+      "!coverage/**",
+      "!dist/**",
+      "!.eslintrc.js",
+      "!babel.config.js",
+      "!index.tsx"
     ]
   }
 }
