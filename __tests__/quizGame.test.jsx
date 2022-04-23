@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {FrontPage, QuestionContext, QuizGame} from "../quizGame";
+import {FrontPage, QuizGame} from "../quizGame";
 import {MemoryRouter} from "react-router-dom";
 import pretty from "pretty";
 
@@ -17,21 +17,9 @@ describe("Quiz game", () => {
     });
 
     it("shows question", () => {
-        const question = {
-            question: "Are you happy?",
-            answers: {
-                answer_a: "Yes",
-                answer_b: "No",
-                answer_c: "Maybe",
-            }
-        }
         const element = document.createElement("div");
         ReactDOM.render(
-            <MemoryRouter initialEntries={["/question"]}>
-                <QuestionContext.Provider value={{randomQuestion: () => question}}>
-                    <QuizGame/>
-                </QuestionContext.Provider>
-            </MemoryRouter>,
+            <MemoryRouter initialEntries={["/question"]}><QuizGame /></MemoryRouter>,
             element
         );
         expect(pretty(element.innerHTML)).toMatchSnapshot();
