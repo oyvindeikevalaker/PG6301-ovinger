@@ -5,13 +5,12 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel index.html",
-    "test": "jest"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "ØEV",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^27.5.1",
     "parcel": "^2.4.0"
   },
   "repository": {
