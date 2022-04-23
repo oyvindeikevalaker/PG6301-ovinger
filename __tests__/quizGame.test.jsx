@@ -46,12 +46,7 @@ describe("Quiz game", () => {
                 answer_b: "No",
                 answer_c: "Maybe",
             },
-            correct_answers: {
-                answer_a_correct: "true",
-                answer_b_correct: "false",
-                answer_c_correct: "false",
-            }
-        }
+        };
 
         const setQuestionsAnswered = jest.fn();
         const setCorrectAnswers = jest.fn();
@@ -66,7 +61,7 @@ describe("Quiz game", () => {
             element
         );
 
-        Simulate.click(element.querySelector("[data-testid=answer_a] button"));
+        Simulate.click(element.querySelector("[data-testid=answer_a]"));
         expect(setQuestionsAnswered).toBeCalled();
         expect(setCorrectAnswers).toBeCalled();
     });
