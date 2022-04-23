@@ -1,5 +1,5 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import React from "react";
+import ReactDOM from "react-dom";
 import {
   FrontPage,
   QuestionContext,
@@ -9,9 +9,8 @@ import {
 import { MemoryRouter } from "react-router-dom";
 import pretty from "pretty";
 import { Simulate } from "react-dom/test-utils";
-import { Question } from "../questions";
 
-const question: Question = {
+const question = {
   question: "Are you happy?",
   answers: {
     answer_a: "Yes",
@@ -34,7 +33,7 @@ describe("Quiz game", () => {
       </MemoryRouter>,
       element
     );
-    expect(element.querySelector("[data-testid=status]")!.textContent).toEqual(
+    expect(element.querySelector("[data-testid=status]").textContent).toEqual(
       "You have answered 3 of 10 correctly"
     );
     expect(pretty(element.innerHTML)).toMatchSnapshot();
@@ -70,9 +69,8 @@ describe("Quiz game", () => {
       element
     );
 
-    Simulate.click(element.querySelector("[data-testid=answer_a] button")!);
+    Simulate.click(element.querySelector("[data-testid=answer_a] button"));
     expect(setQuestionsAnswered).toBeCalled();
     expect(setCorrectAnswers).toBeCalled();
-    expect(pretty(element.innerHTML)).toMatchSnapshot();
   });
 });
