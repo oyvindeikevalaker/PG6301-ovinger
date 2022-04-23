@@ -1,5 +1,4 @@
-import * as React from "react";
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   BrowserRouter,
   Link,
@@ -35,7 +34,6 @@ export function ShowQuestion({ setCorrectAnswers, setQuestionsAnswered }) {
       navigate("/answer/wrong");
     }
   }
-
   const navigate = useNavigate();
   const { randomQuestion } = useContext(QuestionContext);
   const [question] = useState(randomQuestion());
