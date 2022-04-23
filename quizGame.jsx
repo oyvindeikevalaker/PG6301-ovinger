@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import {BrowserRouter, Link, Route, Routes, useNavigate} from "react-router-dom";
 import {randomQuestion, isCorrectAnswer} from "./questions";
 
-export function FrontPage({correctAnswers, questionsAnswered}) {
+function FrontPage({correctAnswers, questionsAnswered}) {
     return <div>
         <h1>Quiz app</h1>
         <div>You have answered {correctAnswers} of {questionsAnswered} correctly</div>

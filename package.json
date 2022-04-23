@@ -11,9 +11,6 @@
   "author": "ØEV",
   "license": "ISC",
   "devDependencies": {
-    "@babel/preset-env": "^7.16.11",
-    "@babel/preset-react": "^7.16.7",
-    "babel-jest": "^27.5.1",
     "jest": "^27.5.1",
     "parcel": "^2.4.0"
   },
