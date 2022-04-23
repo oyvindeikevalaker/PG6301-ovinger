@@ -19,7 +19,7 @@ describe("Quiz game", () => {
     it("shows question", () => {
         const element = document.createElement("div");
         ReactDOM.render(
-            <MemoryRouter initialEntries={["/question"]}><QuizGame /></MemoryRouter>,
+            <MemoryRouter initalEntries={["/question"]}><QuizGame /></MemoryRouter>,
             element
         );
         expect(pretty(element.innerHTML)).toMatchSnapshot();
