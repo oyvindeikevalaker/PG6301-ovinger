@@ -8,6 +8,7 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
   ],
+  ignorePatterns: ["dist", ".eslintrc.js", "babel.config.js"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
