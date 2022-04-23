@@ -1,3 +1,4 @@
+import ReactDOM from "react-dom";
 import React, {useState} from "react";
 import {BrowserRouter, Link, Route, Routes, useNavigate} from "react-router-dom";
 import {isCorrectAnswer, randomQuestion} from "./questions";
@@ -48,13 +49,14 @@ function ShowAnswer() {
 export function QuizGame(){
     const [questionsAnswered, setQuestionsAnswered] = useState(0);
     const [correctAnswers, setCorrectAnswers] = useState(0);
-    return (
+    return <BrowserRouter>
         <Routes>
             <Route path={"/"}
                    element={<FrontPage questionsAnswered={questionsAnswered} correctAnswers={correctAnswers}/>}/>
-            <Route path={"/question"} element={<ShowQuestion setQuestionsAnswered={setQuestionsAnswered}
-                                                             setCorrectAnswers={setCorrectAnswers}/>}/>
+            <Route path={"/question"}
+                   element={<ShowQuestion setQuestionsAnswered={setQuestionsAnswered}
+                                          setCorrectAnswers={setCorrectAnswers}/>}/>
             <Route path={"/answer/*"} element={<ShowAnswer/>}/>
         </Routes>
-    );
+    </BrowserRouter>;
 }
