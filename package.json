@@ -6,9 +6,9 @@
   "scripts": {
     "start": "ts-node server.ts",
     "dev": "nodemon --ext ts,js,json --exec npm start",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write **/*.{tsx,ts,jsx,js,html,json}",
-    "format:check": "prettier --check **/*.{tsx,ts,jsx,js,html,json}",
+    "format": "prettier --write **/*.{tsx,jsx,ts,js,html,json}",
+    "format:check": "prettier --check **/*.{tsx,jsx,ts,js,html,json}",
+    "test": "jest",
     "verify": "npm run format:check && tsc",
     "prepare": "husky install"
   },
