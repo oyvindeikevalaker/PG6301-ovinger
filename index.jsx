@@ -30,7 +30,7 @@ function QuizGame(){
             <Route path={"/"} element={<FrontPage/>}/>
             <Route path={"/question"} element={<ShowQuestion/>}/>
         </Routes>
-    </BrowserRouter>;
+    </BrowserRouter>
 }
 
-ReactDOM.render(<QuizGame/>, document.getElementById("app"));
+ReactDOM.render(<QuizGame />, document.getElementById("app"));
