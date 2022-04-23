@@ -38,7 +38,7 @@ describe("Quiz game", () => {
         expect(pretty(element.innerHTML)).toMatchSnapshot();
     });
 
-    it("records correct answer", () => {
+    it("records correct answer", {
         const question = {
             question: "Are you happy?",
             answers: {
