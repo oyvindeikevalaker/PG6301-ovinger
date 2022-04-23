@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import {FrontPage} from "../quizGame";
 import {MemoryRouter} from "react-router-dom";
-import pretty from "pretty";
 
 describe("Quiz game", () => {
     it("Shows answer status", () => {
@@ -12,7 +11,6 @@ describe("Quiz game", () => {
             element
         );
         expect(element.querySelector("[data-testid=status]").textContent)
-            .toEqual("You have answered 3 of 10 correctly");
-        expect(pretty(element.innerHTML)).toMatchSnapshot();
+            .toEqual("You have answered 3 of 10 correctly")
     })
 })
