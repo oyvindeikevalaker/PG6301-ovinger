@@ -15,4 +15,10 @@ describe("The quiz broadcast", () => {
     });
     expect(response.body).not.toHaveProperty("correct_answers");
   });
+  it("responst to correct answers", async () => {
+    await request(app)
+      .post("/quiz/answer")
+      .send({ id: 974, answer: "answer_b" })
+      .expect({ result: "correct" });
+  });
 });
